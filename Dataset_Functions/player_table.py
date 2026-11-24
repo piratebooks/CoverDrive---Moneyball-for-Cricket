@@ -1,5 +1,10 @@
 import csv
+import sys
+from pathlib import Path
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from functions import OUTPUT_PATH_CLEANED, RAW_DATASET_PATH
 
 bbb_base_path = RAW_DATASET_PATH / "Ball by ball"

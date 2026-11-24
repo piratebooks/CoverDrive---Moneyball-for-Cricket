@@ -31,9 +31,9 @@ A K-Nearest Neighbours (KNN) recommender does the heavy lifting. The user select
    - `raw datasets\ball by ball\T20B`
 
    _Contains the info files for each of the matches present in `all_matches_xxx.csv`, where all the match metadata can be found in the info files_ 
-3. Run `datasets.py`.
+3. From the repository root, run `python "Dataset_Functions\datasets.py"`.
 
-`datasets.py` and `player_table.py` are chained using `subprocess` and `sys` so running the first automatically triggers the second.
+`Dataset_Functions\datasets.py` and `Dataset_Functions\player_table.py` are chained using `subprocess` and `sys` so running the first automatically triggers the second.
 
 ## Data Sources
 

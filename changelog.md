@@ -67,17 +67,19 @@
  - Pushed to github and excluded *_info files from being tracked
  - Made the info files into 3 seperate zip files so its small and easy to track
  - Created the `README.md` file
+ - Created the folder `Dataset_Functions`, such that future Streamlit and other folders will not get messed up
+- Kept the shared path module at the repository root while grouping the dataset scripts in `Dataset_Functions`.
 
-
-## Current file tree as for last update:
+## Current file tree:
 
 CoverDrive/
-├── changelog.md
-├── datasets.py
-├── functions.py
-├── player_table.py
+├── Dataset_Functions/
+│   ├── datasets.py
+│   └── player_table.py
 ├── Cleaned datasets/
-└── Raw datasets/
-    ├── Ball by ball/
-    ├── Player pricing/
-    └── Player register/
+├── Raw datasets/
+├── functions.py
+├── .gitignore
+├── LICENSE
+├── README.md
+└── changelog.md

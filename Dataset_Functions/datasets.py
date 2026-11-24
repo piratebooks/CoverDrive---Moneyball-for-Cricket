@@ -6,12 +6,18 @@
 # 4. Output the cleaned datasets to cleaned datasets folder#
 # Used AI to comment some pieces of code and refactor the long code lines. I'll fight u if you say it makes me a bad programmer
 # This will also import subprocess and sys files to execute player extraction as soon as the first part of datasets is done
+import sys
+import time, subprocess
+from pathlib import Path
 import pandas as pd
-from functions import BASE_PATH, OUTPUT_PATH_CLEANED, RAW_DATASET_PATH
-import time, subprocess, sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from functions import OUTPUT_PATH_CLEANED, RAW_DATASET_PATH
 main = RAW_DATASET_PATH / "Player pricing" / "IPLPlayerAuctionData.csv"
 to_merge_2023 = RAW_DATASET_PATH / "Player pricing" / "IPL_Auction_2023_Sold_Player.csv"
 to_merge_2024 = RAW_DATASET_PATH / "Player pricing" / "IPL_Auction_2024_Sold_Player.csv"
+
 # teams for IPL to be created as a dimension table
 teams_data = {
     "Team": [
@@ -283,4 +289,6 @@ print("Getting ready for stage 2, player extraction - Expect my arrival, worm")
 time.sleep(2)
 print("Commencing...")
 
-subprocess.run([sys.executable, str(BASE_PATH / "player_table.py")], check=True)
+subprocess.run(
+    [sys.executable, str(Path(__file__).resolve().with_name("player_table.py"))],
+    check=True)
